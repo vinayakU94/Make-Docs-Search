@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Make Docs Searcher",
+  "version": "1.1",
+  "permissions": ["activeTab", "scripting"],
+  "action": {}, 
+  "commands": {
+    "open-search": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      },
+      "description": "Open Make Search"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+
+"content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["config.js", "content.js"]
+  }
+]
+
+}
